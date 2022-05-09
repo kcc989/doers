@@ -2,6 +2,8 @@
   "name": "doers",
   "version": "0.1.0",
   "private": false,
+  "license": "MIT",
+  "author": "Casey Collins <casey.collins@hey.com>",
   "dependencies": {
     "@chakra-ui/react": "^1.8.8",
     "@chakra-ui/storybook-addon": "^1.0.3",

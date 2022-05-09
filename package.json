@@ -1,7 +1,7 @@
 {
   "name": "doers",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@chakra-ui/react": "^1.8.8",
     "@chakra-ui/storybook-addon": "^1.0.3",

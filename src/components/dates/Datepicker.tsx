@@ -44,9 +44,10 @@ const PopoverTrigger: React.FC<{ children: React.ReactNode }> =
 
 type DatepickerProps = {
   onChange: (input: string) => void;
+  colorScheme: string;
 };
 
-const Datepicker = ({ onChange }: DatepickerProps) => {
+const Datepicker = ({ onChange, colorScheme = 'primary' }: DatepickerProps) => {
   const {
     calendar,
     clearSelected,
@@ -62,7 +63,7 @@ const Datepicker = ({ onChange }: DatepickerProps) => {
     viewPreviousMonth,
   } = useLilius();
 
-  const styles = useMultiStyleConfig('Datepicker', {});
+  const styles = useMultiStyleConfig('Datepicker', { colorScheme });
 
   const [isOpen, setIsOpen] = useState(false);
   const [inputValue, setInputValue] = useState('');
@@ -151,6 +152,7 @@ const Datepicker = ({ onChange }: DatepickerProps) => {
               onChange={e => onInputChange(e.target.value)}
               placeholder="Select a Date"
               value={inputValue}
+              sx={styles.input}
             />
 
             <InputRightElement>

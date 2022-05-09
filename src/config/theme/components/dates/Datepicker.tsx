@@ -27,6 +27,8 @@ const Datepicker: ComponentMultiStyleConfig = {
 
     return {
       input: {
+        bg: isDark ? 'bg.darkSecondary' : 'bg.secondary',
+        color: isDark ? 'text.darkPrimary' : 'text.primary',
         borderColor: isDark ? 'border.darkPrimary' : 'border.primary',
       },
 
@@ -46,6 +48,8 @@ const Datepicker: ComponentMultiStyleConfig = {
 
       popBody: {
         shadow: 'md',
+        borderRadius: 'md',
+        bg: isDark ? 'gray.900' : 'bg.secondary',
       },
 
       shortcutButtonGroup: {

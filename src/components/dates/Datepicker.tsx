@@ -42,7 +42,11 @@ import { useLilius } from 'use-lilius';
 const PopoverTrigger: React.FC<{ children: React.ReactNode }> =
   OrigPopoverTrigger;
 
-const Datepicker: React.FC = () => {
+type DatepickerProps = {
+  onChange: (input: string) => void;
+};
+
+const Datepicker = ({ onChange }: DatepickerProps) => {
   const {
     calendar,
     clearSelected,
@@ -56,7 +60,6 @@ const Datepicker: React.FC = () => {
     viewing,
     viewNextMonth,
     viewPreviousMonth,
-    viewToday,
   } = useLilius();
 
   const styles = useMultiStyleConfig('Datepicker', {});
@@ -66,7 +69,9 @@ const Datepicker: React.FC = () => {
 
   // Only accept digits and forward slash as input.
   const onInputChange = (input: string) => {
-    setInputValue(input.trim().replace(/[^\d/]+/g, ''));
+    const result = input.trim().replace(/[^\d/]+/g, '');
+    setInputValue(result);
+    onChange(result);
   };
 
   // When the input field loses focus, we need to parse
@@ -253,14 +258,6 @@ const Datepicker: React.FC = () => {
                 </Box>
               ))}
             </Box>
-
-            <Divider sx={styles.divider} />
-
-            <ButtonGroup sx={styles.todayButtonGroup}>
-              <Button onClick={viewToday} size="sm" sx={styles.todayButton}>
-                Today
-              </Button>
-            </ButtonGroup>
           </PopoverBody>
         </PopoverContent>
       </Popover>

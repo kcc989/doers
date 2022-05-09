@@ -49,6 +49,7 @@ const Datepicker: ComponentMultiStyleConfig = {
       },
 
       shortcutButtonGroup: {
+        color: isDark ? 'text.darkSecondary' : 'text.secondary',
         marginBottom: 2,
         spacing: 2,
       },
@@ -75,6 +76,8 @@ const Datepicker: ComponentMultiStyleConfig = {
       navigationButton: {
         backgroundColor: isDark ? 'bg.darkSecondary' : 'bg.secondary',
         borderColor: isDark ? 'border.darkPrimary' : 'border.primary',
+        color: isDark ? 'text.darkSecondary' : 'text.secondary',
+
         borderWidth: 1,
         shadow: 'sm',
 
@@ -93,6 +96,9 @@ const Datepicker: ComponentMultiStyleConfig = {
       },
 
       navigationLabel: {
+        color: isDark
+          ? theme.colors[colorScheme][300]
+          : theme.colors[colorScheme][600],
         fontWeight: 'bold',
       },
 
@@ -121,6 +127,8 @@ const Datepicker: ComponentMultiStyleConfig = {
       },
 
       calendarMatrixDay: {
+        color: isDark ? 'text.darkSecondary' : 'text.primary',
+        fontWeight: 'semibold',
         alignItems: 'center',
         borderRadius: 4,
         display: 'flex',
@@ -130,7 +138,9 @@ const Datepicker: ComponentMultiStyleConfig = {
 
         _hover: {
           backgroundColor: 'none',
-          color: theme.colors[colorScheme][400],
+          color: isDark
+            ? theme.colors[colorScheme][300]
+            : theme.colors[colorScheme][600],
           cursor: 'pointer',
         },
 
@@ -139,7 +149,9 @@ const Datepicker: ComponentMultiStyleConfig = {
         },
 
         '&[data-selected="true"]': {
-          backgroundColor: theme.colors[colorScheme][400],
+          backgroundColor: isDark
+            ? theme.colors[colorScheme][300]
+            : theme.colors[colorScheme][600],
           color: isDark ? 'text.darkSecondary' : 'text.secondary',
           shadow: 'md',
 
@@ -153,9 +165,13 @@ const Datepicker: ComponentMultiStyleConfig = {
         },
 
         '&[data-today="true"]': {
-          borderColor: theme.colors[colorScheme][400],
+          borderColor: isDark
+            ? theme.colors[colorScheme][300]
+            : theme.colors[colorScheme][600],
           borderWidth: 1,
-          color: theme.colors[colorScheme][400],
+          color: isDark
+            ? theme.colors[colorScheme][300]
+            : theme.colors[colorScheme][600],
         },
 
         '&[data-dont-round="true"]': {

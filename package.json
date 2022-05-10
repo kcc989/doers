@@ -1,9 +1,13 @@
 {
-  "name": "doers",
-  "version": "0.1.0",
+  "name": "@doers/react",
+  "version": "0.1.3",
   "private": false,
   "license": "MIT",
   "author": "Casey Collins <casey.collins@hey.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kcc989/doers"
+  },
   "dependencies": {
     "@chakra-ui/react": "^1.8.8",
     "@chakra-ui/storybook-addon": "^1.0.3",
@@ -16,13 +20,16 @@
     "@testing-library/jest-dom": "^5.9.0",
     "@testing-library/react": "^10.2.1",
     "@testing-library/user-event": "^12.0.2",
+    "final-form": "^4.20.7",
     "framer-motion": "^4.0.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+    "react-final-form": "^6.5.9",
     "react-icons": "^3.0.0",
     "react-scripts": "5.0.1",
     "use-lilius": "^2.0.0",
-    "web-vitals": "^0.2.2"
+    "web-vitals": "^0.2.2",
+    "zod": "^3.15.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -44,6 +51,9 @@
         }
       }
     ]
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "browserslist": {
     "production": [
@@ -71,6 +81,7 @@
     "@storybook/testing-library": "^0.0.11",
     "@types/react": "^18.0.8",
     "ts-node": "^10.7.0",
+    "tsconfig-paths-webpack-plugin": "^3.5.2",
     "typescript": "^4.6.4",
     "webpack": "^5.72.0"
   }

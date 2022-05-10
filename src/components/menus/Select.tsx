@@ -1,9 +1,9 @@
 import {
   Box,
   BoxProps,
+  ButtonProps,
   Flex,
   Icon,
-  useColorModeValue,
   useMultiStyleConfig,
 } from '@chakra-ui/react';
 import { Listbox } from '@headlessui/react';
@@ -15,25 +15,27 @@ export type DropdownItem = {
   value: string | number;
 };
 
-type DropdownProps = {
+export type SelectProps = {
   defaultOption?: DropdownItem;
+  disabled: boolean;
   onChange?: (v: DropdownItem) => void;
   options: DropdownItem[];
-  buttonProps?: BoxProps;
+  buttonProps?: ButtonProps;
   optionsProps?: BoxProps;
   optionProps?: BoxProps;
-  placeholder: string;
-  variant: string;
+  placeholder?: string;
+  variant?: string;
 };
 
-export default function Dropdown({
+export default function Select({
+  disabled,
   defaultOption,
   onChange = _ => null,
   options,
   placeholder,
-  variant,
+  variant = 'primary',
   ...props
-}: DropdownProps) {
+}: SelectProps) {
   const [selectedOption, setSelectedOption] = useState(defaultOption);
   const styles = useMultiStyleConfig('Select', { variant, ...props });
 
@@ -46,8 +48,13 @@ export default function Dropdown({
   );
 
   return (
-    <Listbox value={selectedOption} onChange={handleSelect} as={Box}>
-      <Listbox.Button as={Box} __css={styles.button}>
+    <Listbox
+      value={selectedOption}
+      onChange={handleSelect}
+      as={Box}
+      disabled={disabled}
+    >
+      <Listbox.Button as={Box} __css={styles.button} {...props.buttonProps}>
         <Flex align={'center'} justify="space-between">
           <Box>{selectedOption ? selectedOption.value : placeholder}</Box>
           <Flex flexDir={'column'}>

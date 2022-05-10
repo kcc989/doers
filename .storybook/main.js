@@ -1,3 +1,5 @@
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
+
 module.exports = {
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
@@ -24,6 +26,7 @@ module.exports = {
       include: /node_modules/,
       type: 'javascript/auto',
     });
+    config.resolve.plugins = [new TsconfigPathsPlugin()];
     // Return the altered config
     return config;
   },

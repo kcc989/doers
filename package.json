@@ -1,0 +1,82 @@
+{
+  "name": "@doers/react",
+  "version": "0.2.0",
+  "private": false,
+  "license": "MIT",
+  "description": "A react component library with chakra",
+  "author": "Casey Collins <casey.collins@hey.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kcc989/doers"
+  },
+  "module": "dist/esm/index.js",
+  "types": "dist/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test --passWithNoTests",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why"
+  },
+  "peerDependencies": {
+    "@chakra-ui/react": ">=1.6.5",
+    "react": ">=16"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": false,
+    "trailingComma": "es5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.8",
+    "@chakra-ui/cli": "^1.9.0",
+    "@chakra-ui/react": "^2.0.2",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
+    "@fontsource/inter": "^4.5.10",
+    "@fontsource/raleway": "^4.5.8",
+    "@headlessui/react": "^1.6.1",
+    "@heroicons/react": "^1.0.6",
+    "@size-limit/preset-small-lib": "^5.0.1",
+    "@types/react": "^17.0.14",
+    "@types/react-dom": "^17.0.9",
+    "apexcharts": "^3.35.2",
+    "babel-loader": "^8.2.2",
+    "final-form": "^4.20.7",
+    "framer-motion": "^4",
+    "husky": "^7.0.1",
+    "react": "^17.0.2",
+    "react-apexcharts": "^1.4.0",
+    "react-dom": "^17.0.2",
+    "react-final-form": "^6.5.9",
+    "react-is": "^17.0.2",
+    "size-limit": "^5.0.1",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.3.0",
+    "typescript": "^4.4.4",
+    "use-lilius": "^2.0.0",
+    "web-vitals": "^0.2.2",
+    "zod": "^3.15.1"
+  },
+  "dependencies": {
+    "react-nanny": "^2.9.0"
+  }
+}
